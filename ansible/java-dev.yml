@@ -1,0 +1,14 @@
+# Ansible Playbook to set up minimal
+# Java developer environment
+# on an Ubuntu 16.04
+
+---
+
+- hosts: all
+  gather_facts: no
+  become: yes
+  roles:
+      - fix_quirks
+      - user
+      - java
+      - editor

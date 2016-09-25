@@ -1,0 +1,10 @@
+# Install all packages needed to run and develop with java
+
+---
+
+- name: Install necessary packages for Java development
+  apt: name={{ item }} state=installed
+  with_items:
+      - openjdk-8-jdk
+      - openjdk-8-jre
+      - maven

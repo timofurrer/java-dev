@@ -1,0 +1,9 @@
+# Install Java development environment
+
+---
+
+- name: Install necessary packages for a Java development environment
+  apt: name={{ item }} state=installed
+  with_items:
+      - vim
+      - eclipse

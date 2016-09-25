@@ -1,0 +1,7 @@
+# Create development user
+
+---
+
+# Password is 'bruce'
+- name: Create development user
+  user: name=batman password='$6$rounds=656000$QWAZIpsbUfCNzrbQ$DcIXZLS1WIz.BUHCZjHHEs/uoM156a4HuEqPTdhqUjCPZDXeq3.TFNfe15fGbcGurJf4NAugll8dl3St7krSt/' groups=sudo append=yes update_password=always shell=/bin/bash

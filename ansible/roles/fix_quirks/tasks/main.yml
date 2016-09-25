@@ -1,0 +1,10 @@
+# Fix quirks
+# Ansible needs python2 which is not installed on Ubuntu 16.04 by default
+
+---
+
+- name: Install python 2.7
+  raw: apt-get update -qq && apt-get install -qq python2.7
+
+- name: create softlink for python 2.7
+  raw: ln -fs /usr/bin/python2.7 /usr/bin/python
