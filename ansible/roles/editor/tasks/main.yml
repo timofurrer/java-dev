@@ -6,4 +6,14 @@
   apt: name={{ item }} state=installed
   with_items:
       - vim
-      - eclipse
+
+- name: Download newest eclipse from website
+  get_url:
+      url: 'http://mirror.switch.ch/eclipse/oomph/epp/neon/R2a/eclipse-inst-linux64.tar.gz'
+      dest: /tmp/eclipse.tar.gz
+
+- name: Unarchive downloaded eclipse
+  unarchive:
+      src: /tmp/eclipse.tar.gz
+      dest: /opt
+      copy: no
