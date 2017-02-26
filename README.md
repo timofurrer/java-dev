@@ -11,7 +11,14 @@ on my machine. Yeay! :tada:
 ```bash
 vagrant plugin install vagrant-vbguest
 vagrant up --provision
+vagrant reload  # we have to provision first in order to mount the sync folder
 vagrant ssh
+
+# on first launch eclipse installer:
+/opt/eclipse/eclipse-inst
+
+# launch eclipse and learn to live with it!
+eclpise
 ```
 
 Login with username *batman* and password *bruce*.
