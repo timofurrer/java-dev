@@ -1,9 +1,14 @@
 # Get command which is used with vagrant command
 VAGRANT_COMMAND = ARGV[0]
+def provisioned?(vm_name='default', provider='virtualbox')
+    File.exist?(".vagrant/machines/#{vm_name}/#{provider}/action_provision")
+end
 
 Vagrant.configure(2) do |config|
     config.vm.box = "ubuntu/xenial64"
-    config.vm.synced_folder "../", "/home/batman/hslu", owner: "batman", group: "batman"
+    if provisioned?
+        config.vm.synced_folder "../", "/home/batman/hslu", owner: "batman", group: "batman"
+    end
     config.ssh.forward_x11 = true
 
     config.vm.provider "virtualbox" do |vb|
